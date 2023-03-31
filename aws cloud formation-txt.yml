@@ -1,0 +1,10 @@
+#create stack
+bash create.sh demonetworkstack new-network.yml network-parameters.json 
+
+bash update.sh serversstack servers.yml server-parameters.json  
+
+
+aws cloudformation deploy \
+        --template-file cloudfront.yml \
+        --stack-name InitialStack \
+        --parameter-overrides WorkflowID=udapeople-mika

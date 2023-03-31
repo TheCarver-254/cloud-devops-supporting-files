@@ -1,0 +1,28 @@
+Landing Page:
+https://learn.udacity.com/my-programs?tab=Currently%2520Learning
+https://learn.udacity.com/nanodegrees/nd9991-alg-t2/parts/cd0649
+https://learn.udacity.com/nanodegrees/nd9991-alg-t2/parts/cd0650
+
+
+Github
+https://github.com/udacity/DevOps_Microservices
+https://github.com/noahgift/awslambda
+https://github.com/udacity/DevOps_Microservices
+
+
+
+
+
+other resources
+https://www.youtube.com/watch?v=TaZqirmuBZM
+https://www.youtube.com/watch?v=AlRUeNFuObk
+https://www.youtube.com/playlist?list=PLdfopzFjkPz-xDXqAAc0Jrh1eumV4HNmX
+https://github.com/noahgift/awslambda/blob/master/beginners_guide_aws_lambda.ipynb
+
+
+Stack overflow
+https://stackoverflow.com/questions/61841136/what-is-the-cause-of-the-security-constraints-not-satisfied-error-when-using-sam
+
+
+azure devops
+https://azure.microsoft.com/en-us/blog/introducing-azure-devops/

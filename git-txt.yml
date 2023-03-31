@@ -1,0 +1,94 @@
+# …or create a new repository on the command line
+echo "# MicahAcosta-project-ml-microservice-kubernetes" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:MicahAcosta/MicahAcosta-project-ml-microservice-kubernetes.git
+git push -u origin main
+
+
+
+#…or push an existing repository from the command line
+git remote add origin git@github.com:MicahAcosta/MicahAcosta-project-ml-microservice-kubernetes.git
+git branch -M main
+git push -u origin main
+
+
+
+
+
+#…or create a new repository on the command line
+echo "# my-travel-plans" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:MicahAcosta/my-travel-plans.git
+git push -u origin main
+
+
+#…or push an existing repository from the command line
+git remote add origin git@github.com:MicahAcosta/my-travel-plans.git
+git branch -M main
+git push -u origin main
+
+
+#…or import code from another repository
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+
+
+
+git config --global user.email "micahacosta51@gmail.com"
+git config --global user.name "The Carver"
+
+
+#checkout to a new branch
+git checkout -b "branch2"
+
+#push new branch to github
+git push origin branch2
+
+#Filtering Collaborator's Commits
+#Group By Commit Author
+git shortlog
+
+#Filter By Author
+git log --author=Surma
+
+#If we wanted to see only the commits by Paul Lewis we have to run:
+git log --author="Paul Lewis"
+
+
+#add upstream
+git remote add upstream git@github.com:udacity/course-collaboration-travel-plans.git
+
+#Retrieving Upstream Changes
+git fetch upstream master
+
+#use git log to see the changes you've fetched from upstream
+git log --online --graph --decorate --all
+
+
+# to make sure I'm on the correct branch for merging
+ git checkout master
+
+# merge in Lam's changes
+ git merge upstream/master
+
+# send Lam's changes to *my* remote
+ git push origin master
+
+ /home/thecarver/udacity_git/git1/course-collaboration-travel-plans
+
+
+
+#Stack-Overflow Research
+#Remove directory from remote repository after adding them to .gitignore
+#link: https://stackoverflow.com/questions/7927230/remove-directory-from-remote-repository-after-adding-them-to-gitignore
+git rm -r --cached some-directory
+git commit -m 'Remove the now ignored directory "some-directory"'
+git push origin master
+
+#anto github: https://github.com/anthonymelly/Udacity_Project-4_Operationalize_a_Machine_Learning_Microservice_API
+

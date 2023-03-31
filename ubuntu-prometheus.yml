@@ -1,0 +1,1014 @@
+thecarver@TheCarver:~$ cd ssh/
+
+thecarver@TheCarver:~/ssh$ ssh -i "udacity-project3.pem" ubuntu@ec2-44-204-165-46.compute-1.amazonaws.com
+
+
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/prometheus.yml
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/alertmanager.yml
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/alertmanager.yml
+ubuntu@ip-172-31-6-144:~$ sudo systemctl daemon-reload
+ubuntu@ip-172-31-6-144:~$ sudo systemctl enable alertmanager
+sudo systemctl start alertmanager
+ubuntu@ip-172-31-6-144:~$ sudo systemctl restart prometheus
+
+ubuntu@ip-172-31-6-144:~$ sudo systemctl status alertmanager
+
+● alertmanager.service - Alert Manager
+     Loaded: loaded (/etc/systemd/system/alertmanager.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2023-03-14 02:01:02 UTC; 1h 27min ago
+   Main PID: 9392 (alertmanager)
+      Tasks: 7 (limit: 1143)
+     Memory: 14.4M
+        CPU: 4.035s
+     CGroup: /system.slice/alertmanager.service
+             └─9392 /usr/local/bin/alertmanager --config.file=/etc/prometheus/alertmanager.yml --storage.pa>
+
+Mar 14 03:25:17 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-14T03:25:17.223Z caller=notify.go>
+Mar 14 03:25:19 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-14T03:25:19.179Z caller=notify.go>
+Mar 14 03:25:21 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-14T03:25:21.661Z caller=notify.go>
+Mar 14 03:25:24 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-14T03:25:24.306Z caller=notify.go>
+ubuntu@ip-172-31-6-144:~$
+ubuntu@ip-172-31-6-144:~$
+ubuntu@ip-172-31-6-144:~$ sudo chown -R prometheus:prometheus /etc/prometheus
+ubuntu@ip-172-31-6-144:~$ sudo systemctl restart prometheus
+ubuntu@ip-172-31-6-144:~$ sudo systemctl status prometheus
+sudo systemctl status node_exporter
+sudo systemctl status alertmanager
+● prometheus.service - Prometheus
+     Loaded: loaded (/etc/systemd/system/prometheus.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2023-03-14 03:29:18 UTC; 11s ago
+   Main PID: 10264 (prometheus)
+      Tasks: 6 (limit: 1143)
+     Memory: 37.2M
+        CPU: 137ms
+     CGroup: /system.slice/prometheus.service
+             └─10264 /usr/local/bin/prometheus --config.file /etc/prometheus/prometheus.yml --storage.tsdb.>
+
+Mar 14 03:29:18 ip-172-31-6-144 prometheus[10264]: ts=2023-03-14T03:29:18.539Z caller=head.go:683 level=inf>
+Mar 14 03:29:18 ip-172-31-6-144 prometheus[10264]: ts=2023-03-14T03:29:18.544Z caller=head.go:683 level=inf>
+Mar 14 03:29:18 ip-172-31-6-144 prometheus[10264]: ts=2023-03-14T03:29:18.546Z caller=head.go:683 level=inf>
+Mar 14 03:29:18 ip-172-31-6-144 prometheus[10264]: ts=2023-03-14T03:29:18.546Z caller=head.go:720 level=inf>
+● node_exporter.service - Prometheus Node Exporter Service
+     Loaded: loaded (/etc/systemd/system/node_exporter.service; enabled; vendor preset: enabled)
+     Active: active (running) since Mon 2023-03-13 14:05:55 UTC; 13h ago
+   Main PID: 3430 (node_exporter)
+      Tasks: 3 (limit: 1143)
+     Memory: 4.6M
+        CPU: 77ms
+     CGroup: /system.slice/node_exporter.service
+             └─3430 /usr/local/bin/node_exporter
+
+Mar 13 14:05:55 ip-172-31-6-144 node_exporter[3430]: ts=2023-03-13T14:05:55.471Z caller=node_exporter.go:11>
+Mar 13 14:05:55 ip-172-31-6-144 node_exporter[3430]: ts=2023-03-13T14:05:55.471Z caller=node_exporter.go:11>
+Mar 13 14:05:55 ip-172-31-6-144 node_exporter[3430]: ts=2023-03-13T14:05:55.471Z caller=node_exporter.go:11>
+Mar 13 14:05:55 ip-172-31-6-144 node_exporter[3430]: ts=2023-03-13T14:05:55.471Z caller=node_exporter.go:11>
+● alertmanager.service - Alert Manager
+     Loaded: loaded (/etc/systemd/system/alertmanager.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2023-03-14 02:01:02 UTC; 1h 28min ago
+   Main PID: 9392 (alertmanager)
+      Tasks: 7 (limit: 1143)
+     Memory: 14.4M
+        CPU: 4.099s
+     CGroup: /system.slice/alertmanager.service
+             └─9392 /usr/local/bin/alertmanager --config.file=/etc/prometheus/alertmanager.yml --storage.pa>
+
+Mar 14 03:25:19 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-14T03:25:19.179Z caller=notify.go>
+Mar 14 03:25:21 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-14T03:25:21.661Z caller=notify.go>
+Mar 14 03:25:24 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-14T03:25:24.306Z caller=notify.go>
+Mar 14 03:25:32 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-14T03:25:32.660Z caller=notify.go>
+ubuntu@ip-172-31-6-144:~$ client_loop: send disconnect: Broken pipe
+-bash: syntax error near unexpected token `('
+thecarver@TheCarver:~/ssh$
+
+
+
+
+
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.90.1-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+Last login: Tue Mar 14 06:20:25 EAT 2023 on pts/23
+thecarver@TheCarver:~$ cd ssh/
+thecarver@TheCarver:~/ssh$  ssh -i "udacity-project3.pem" ubuntu@ec2-44-204-165-46.compute-1.amazonaws.com
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.0-1028-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue Mar 14 03:38:40 UTC 2023
+
+  System load:  0.0               Processes:             121
+  Usage of /:   33.7% of 7.57GB   Users logged in:       1
+  Memory usage: 31%               IPv4 address for eth0: 172.31.6.144
+  Swap usage:   0%
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+ * Introducing Expanded Security Maintenance for Applications.
+   Receive updates to over 25,000 software packages with your
+   Ubuntu Pro subscription. Free for personal use.
+
+     https://ubuntu.com/aws/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+49 updates can be applied immediately.
+26 of these updates are standard security updates.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+Last login: Tue Mar 14 03:21:13 2023 from 41.90.188.171
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/systemd/system/alertmanager.service
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/rules.yml
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/prometheus.yml
+ubuntu@ip-172-31-6-144:~$ sudo systemctl restart prometheus
+ubuntu@ip-172-31-6-144:~$ sudo systemctl status prometheus
+sudo systemctl status node_exporter
+sudo systemctl status alertmanager
+● prometheus.service - Prometheus
+     Loaded: loaded (/etc/systemd/system/prometheus.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2023-03-14 03:42:08 UTC; 6s ago
+   Main PID: 10387 (prometheus)
+      Tasks: 5 (limit: 1143)
+     Memory: 34.1M
+        CPU: 132ms
+     CGroup: /system.slice/prometheus.service
+             └─10387 /usr/local/bin/prometheus --config.file /etc/prometheus/prometheus.yml --storage.tsdb.>
+Mar 14 03:42:08 ip-172-31-6-144 prometheus[10387]: ts=2023-03-14T03:42:08.429Z caller=head.go:683 level=inf>Mar 14 03:42:08 ip-172-31-6-144 prometheus[10387]: ts=2023-03-14T03:42:08.434Z caller=head.go:683 level=inf>Mar 14 03:42:08 ip-172-31-6-144 prometheus[10387]: ts=2023-03-14T03:42:08.435Z caller=head.go:683 level=inf>Mar 14 03:42:08 ip-172-31-6-144 prometheus[10387]: ts=2023-03-14T03:42:08.435Z caller=head.go:720 level=inf>● node_exporter.service - Prometheus Node Exporter Service
+     Loaded: loaded (/etc/systemd/system/node_exporter.service; enabled; vendor preset: enabled)
+     Active: active (running) since Mon 2023-03-13 14:05:55 UTC; 13h ago
+   Main PID: 3430 (node_exporter)
+      Tasks: 3 (limit: 1143)
+     Memory: 4.6M
+        CPU: 77ms
+     CGroup: /system.slice/node_exporter.service
+             └─3430 /usr/local/bin/node_exporter
+
+Mar 13 14:05:55 ip-172-31-6-144 node_exporter[3430]: ts=2023-03-13T14:05:55.471Z caller=node_exporter.go:11>Mar 13 14:05:55 ip-172-31-6-144 node_exporter[3430]: ts=2023-03-13T14:05:55.471Z caller=node_exporter.go:11>Mar 13 14:05:55 ip-172-31-6-144 node_exporter[3430]: ts=2023-03-13T14:05:55.471Z caller=node_exporter.go:11>Mar 13 14:05:55 ip-172-31-6-144 node_exporter[3430]: ts=2023-03-13T14:05:55.471Z caller=node_exporter.go:11>● alertmanager.service - Alert Manager
+     Loaded: loaded (/etc/systemd/system/alertmanager.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2023-03-14 02:01:02 UTC; 1h 41min ago
+   Main PID: 9392 (alertmanager)
+      Tasks: 7 (limit: 1143)
+     Memory: 14.4M
+        CPU: 4.772s
+     CGroup: /system.slice/alertmanager.service
+             └─9392 /usr/local/bin/alertmanager --config.file=/etc/prometheus/alertmanager.yml --storage.pa>
+Mar 14 03:40:15 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-14T03:40:15.895Z caller=notify.go>Mar 14 03:40:17 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-14T03:40:17.508Z caller=notify.go>Mar 14 03:40:18 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-14T03:40:18.907Z caller=notify.go>Mar 14 03:40:21 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-14T03:40:21.331Z caller=notify.go>ubuntu@ip-172-31-6-144:~$ client_loop: send disconnect: Broken pipe
+thecarver@TheCarver:~/ssh$
+
+
+
+
+
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.90.1-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+Last login: Tue Mar 14 06:37:52 EAT 2023 on pts/20
+thecarver@TheCarver:~$ cd ssh/
+thecarver@TheCarver:~/ssh$  ssh -i "udacity-project3.pem" ubuntu@ec2-44-204-165-46.compute-1.amazonaws.com
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.0-1028-aws x86_64)
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.0-1028-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue Mar 14 07:18:07 UTC 2023
+
+  System load:  0.0               Processes:             100
+  Usage of /:   37.1% of 7.57GB   Users logged in:       0
+  Memory usage: 33%               IPv4 address for eth0: 172.31.6.144
+  Swap usage:   0%
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+ * Introducing Expanded Security Maintenance for Applications.
+   Receive updates to over 25,000 software packages with your
+   Ubuntu Pro subscription. Free for personal use.
+
+     https://ubuntu.com/aws/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+23 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+*** System restart required ***
+Last login: Tue Mar 14 03:38:41 2023 from 41.90.188.171
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/systemd/system/alertmanager.service
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/rules.yml
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/rules.yml
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/prometheus.yml
+ubuntu@ip-172-31-6-144:~$ sudo systemctl restart prometheus
+ubuntu@ip-172-31-6-144:~$ sudo systemctl status prometheus
+● prometheus.service - Prometheus
+     Loaded: loaded (/etc/systemd/system/prometheus.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2023-03-14 07:23:41 UTC; 11s ago
+   Main PID: 27145 (prometheus)
+      Tasks: 7 (limit: 1143)
+     Memory: 60.5M
+        CPU: 171ms
+     CGroup: /system.slice/prometheus.service
+             └─27145 /usr/local/bin/prometheus --config.file /etc/prometheus/prometheus.yml --storage.tsdb.>
+Mar 14 07:23:42 ip-172-31-6-144 prometheus[27145]: ts=2023-03-14T07:23:42.404Z caller=head.go:683 level=inf>Mar 14 07:23:42 ip-172-31-6-144 prometheus[27145]: ts=2023-03-14T07:23:42.416Z caller=head.go:683 level=inf>Mar 14 07:23:42 ip-172-31-6-144 prometheus[27145]: ts=2023-03-14T07:23:42.416Z caller=head.go:683 level=inf>Mar 14 07:23:42 ip-172-31-6-144 prometheus[27145]: ts=2023-03-14T07:23:42.416Z caller=head.go:720 level=inf>ubuntu@ip-172-31-6-144:~$ sudo systemctl status node_exporter
+● node_exporter.service - Prometheus Node Exporter Service
+     Loaded: loaded (/etc/systemd/system/node_exporter.service; enabled; vendor preset: enabled)
+     Active: active (running) since Mon 2023-03-13 14:05:55 UTC; 17h ago
+   Main PID: 3430 (node_exporter)
+      Tasks: 3 (limit: 1143)
+     Memory: 3.3M
+        CPU: 92ms
+     CGroup: /system.slice/node_exporter.service
+             └─3430 /usr/local/bin/node_exporter
+
+Mar 13 14:05:55 ip-172-31-6-144 node_exporter[3430]: ts=2023-03-13T14:05:55.471Z caller=node_exporter.go:11>Mar 13 14:05:55 ip-172-31-6-144 node_exporter[3430]: ts=2023-03-13T14:05:55.471Z caller=node_exporter.go:11>Mar 13 14:05:55 ip-172-31-6-144 node_exporter[3430]: ts=2023-03-13T14:05:55.471Z caller=node_exporter.go:11>Mar 13 14:05:55 ip-172-31-6-144 node_exporter[3430]: ts=2023-03-13T14:05:55.471Z caller=node_exporter.go:11>ubuntu@ip-172-31-6-144:~$ sudo systemctl status alertmanager
+● alertmanager.service - Alert Manager
+     Loaded: loaded (/etc/systemd/system/alertmanager.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2023-03-14 02:01:02 UTC; 5h 23min ago
+   Main PID: 9392 (alertmanager)
+      Tasks: 7 (limit: 1143)
+     Memory: 23.9M
+        CPU: 16.390s
+     CGroup: /system.slice/alertmanager.service
+             └─9392 /usr/local/bin/alertmanager --config.file=/etc/prometheus/alertmanager.yml --storage.pa>
+Mar 14 07:20:17 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-14T07:20:17.682Z caller=notify.go>Mar 14 07:20:20 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-14T07:20:20.894Z caller=notify.go>Mar 14 07:20:26 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-14T07:20:26.298Z caller=notify.go>Mar 14 07:20:31 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-14T07:20:31.647Z caller=notify.go>ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/alertmanager.yml
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/alertmanager.yml
+ubuntu@ip-172-31-6-144:~$ sudo systemctl daemon-reload
+ubuntu@ip-172-31-6-144:~$ sudo systemctl enable alertmanager
+ubuntu@ip-172-31-6-144:~$ sudo systemctl start alertmanager
+ubuntu@ip-172-31-6-144:~$ sudo systemctl restart prometheus
+ubuntu@ip-172-31-6-144:~$ sudo systemctl status alertmanager
+● alertmanager.service - Alert Manager
+     Loaded: loaded (/etc/systemd/system/alertmanager.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2023-03-14 02:01:02 UTC; 5h 34min ago
+   Main PID: 9392 (alertmanager)
+      Tasks: 7 (limit: 1143)
+     Memory: 24.2M
+        CPU: 16.966s
+     CGroup: /system.slice/alertmanager.service
+             └─9392 /usr/local/bin/alertmanager --config.file=/etc/prometheus/alertmanager.yml --storage.pa>
+Mar 14 07:33:47 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-14T07:33:47.289Z caller=notify.go>Mar 14 07:34:33 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-14T07:34:33.548Z caller=notify.go>Mar 14 07:35:14 ip-172-31-6-144 alertmanager[9392]: level=error ts=2023-03-14T07:35:14.236Z caller=dispatch>Mar 14 07:35:14 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-14T07:35:14.431Z caller=notify.go>ubuntu@ip-172-31-6-144:~$ sudo chown -R prometheus:prometheus /etc/prometheus
+ubuntu@ip-172-31-6-144:~$ sudo systemctl restart prometheus
+ubuntu@ip-172-31-6-144:~$ sudo systemctl status prometheus
+● prometheus.service - Prometheus
+     Loaded: loaded (/etc/systemd/system/prometheus.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2023-03-14 07:36:10 UTC; 17s ago
+   Main PID: 27291 (prometheus)
+      Tasks: 5 (limit: 1143)
+     Memory: 34.4M
+        CPU: 148ms
+     CGroup: /system.slice/prometheus.service
+             └─27291 /usr/local/bin/prometheus --config.file /etc/prometheus/prometheus.yml --storage.tsdb.>
+Mar 14 07:36:10 ip-172-31-6-144 prometheus[27291]: ts=2023-03-14T07:36:10.682Z caller=head.go:683 level=inf>Mar 14 07:36:10 ip-172-31-6-144 prometheus[27291]: ts=2023-03-14T07:36:10.683Z caller=head.go:683 level=inf>Mar 14 07:36:10 ip-172-31-6-144 prometheus[27291]: ts=2023-03-14T07:36:10.684Z caller=head.go:683 level=inf>Mar 14 07:36:10 ip-172-31-6-144 prometheus[27291]: ts=2023-03-14T07:36:10.684Z caller=head.go:720 level=inf>ubuntu@ip-172-31-6-144:~$ sudo systemctl status node_exporter
+● node_exporter.service - Prometheus Node Exporter Service
+     Loaded: loaded (/etc/systemd/system/node_exporter.service; enabled; vendor preset: enabled)
+     Active: active (running) since Mon 2023-03-13 14:05:55 UTC; 17h ago
+   Main PID: 3430 (node_exporter)
+      Tasks: 3 (limit: 1143)
+     Memory: 3.3M
+        CPU: 93ms
+     CGroup: /system.slice/node_exporter.service
+             └─3430 /usr/local/bin/node_exporter
+
+Mar 13 14:05:55 ip-172-31-6-144 node_exporter[3430]: ts=2023-03-13T14:05:55.471Z caller=node_exporter.go:11>Mar 13 14:05:55 ip-172-31-6-144 node_exporter[3430]: ts=2023-03-13T14:05:55.471Z caller=node_exporter.go:11>Mar 13 14:05:55 ip-172-31-6-144 node_exporter[3430]: ts=2023-03-13T14:05:55.471Z caller=node_exporter.go:11>Mar 13 14:05:55 ip-172-31-6-144 node_exporter[3430]: ts=2023-03-13T14:05:55.471Z caller=node_exporter.go:11>ubuntu@ip-172-31-6-144:~$ sudo systemctl status alertmanager
+● alertmanager.service - Alert Manager
+     Loaded: loaded (/etc/systemd/system/alertmanager.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2023-03-14 02:01:02 UTC; 5h 36min ago
+   Main PID: 9392 (alertmanager)
+      Tasks: 7 (limit: 1143)
+     Memory: 24.2M
+        CPU: 17.078s
+     CGroup: /system.slice/alertmanager.service
+             └─9392 /usr/local/bin/alertmanager --config.file=/etc/prometheus/alertmanager.yml --storage.pa>
+Mar 14 07:35:17 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-14T07:35:17.525Z caller=notify.go>Mar 14 07:35:19 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-14T07:35:19.473Z caller=notify.go>Mar 14 07:35:22 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-14T07:35:22.825Z caller=notify.go>Mar 14 07:35:28 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-14T07:35:28.097Z caller=notify.go>ubuntu@ip-172-31-6-144:~$ client_loop: send disconnect: Broken pipe
+-bash: syntax error near unexpected token `('
+thecarver@TheCarver:~/ssh$
+
+
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.90.1-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+Last login: Tue Mar 14 10:17:04 EAT 2023 on pts/2
+thecarver@TheCarver:~$ cd ssh/
+thecarver@TheCarver:~/ssh$ ssh -i "udacity-project3.pem" ubuntu@ec2-44-204-165-46.compute-1.amazonaws.com
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.0-1028-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Tue Mar 14 09:13:00 UTC 2023
+
+  System load:  0.0               Processes:             102
+  Usage of /:   37.2% of 7.57GB   Users logged in:       1
+  Memory usage: 33%               IPv4 address for eth0: 172.31.6.144
+  Swap usage:   0%
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+ * Introducing Expanded Security Maintenance for Applications.
+   Receive updates to over 25,000 software packages with your
+   Ubuntu Pro subscription. Free for personal use.
+
+     https://ubuntu.com/aws/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+23 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+*** System restart required ***
+Last login: Tue Mar 14 07:18:09 2023 from 41.90.188.171
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/prometheus.yml
+ubuntu@ip-172-31-6-144:~$ sudo systemctl restart prometheus
+ubuntu@ip-172-31-6-144:~$ sudo systemctl status prometheus
+● prometheus.service - Prometheus
+     Loaded: loaded (/etc/systemd/system/prometheus.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2023-03-14 09:14:28 UTC; 23s ago
+   Main PID: 27697 (prometheus)
+      Tasks: 6 (limit: 1143)
+     Memory: 30.0M
+        CPU: 142ms
+     CGroup: /system.slice/prometheus.service
+             └─27697 /usr/local/bin/prometheus --config.file /etc/prometheus/prometheus.yml --storage.tsdb.>
+Mar 14 09:14:28 ip-172-31-6-144 prometheus[27697]: ts=2023-03-14T09:14:28.849Z caller=head.go:683 level=inf>Mar 14 09:14:28 ip-172-31-6-144 prometheus[27697]: ts=2023-03-14T09:14:28.857Z caller=head.go:683 level=inf>Mar 14 09:14:28 ip-172-31-6-144 prometheus[27697]: ts=2023-03-14T09:14:28.857Z caller=head.go:683 level=inf>Mar 14 09:14:28 ip-172-31-6-144 prometheus[27697]: ts=2023-03-14T09:14:28.857Z caller=head.go:720 level=inf>ubuntu@ip-172-31-6-144:~$ client_loop: send disconnect: Broken pipe
+thecarver@TheCarver:~/ssh$
+
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.90.1-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+Last login: Thu Mar 16 16:07:02 EAT 2023 on pts/30
+thecarver@TheCarver:~$ cd ssh/
+thecarver@TheCarver:~/ssh$ ssh -i "udacity-project3.pem" ubuntu@ec2-52-91-133-29.compute-1.amazonaws.com
+The authenticity of host 'ec2-52-91-133-29.compute-1.amazonaws.com (52.91.133.29)' can't be established.
+ED25519 key fingerprint is SHA256:5FnT7By/ZOe/gm85TKEtLq+ibDpp2xqZVSBJBIjGpIg.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? Y
+Please type 'yes', 'no' or the fingerprint: yes
+Warning: Permanently added 'ec2-52-91-133-29.compute-1.amazonaws.com' (ED25519) to the list of known hosts.
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.0-1028-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu Mar 16 13:18:19 UTC 2023
+
+  System load:  0.0               Processes:             96
+  Usage of /:   19.8% of 7.57GB   Users logged in:       0
+  Memory usage: 19%               IPv4 address for eth0: 172.31.58.163
+  Swap usage:   0%
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+ubuntu@ip-172-31-58-163:~$ sudo useradd --no-create-home node_exporter
+ubuntu@ip-172-31-58-163:~$ wget https://github.com/prometheus/node_exporter/releases/download/v1.0.1/node_exporter-1.0.1.linux-amd64.tar.gz
+--2023-03-16 13:18:50--  https://github.com/prometheus/node_exporter/releases/download/v1.0.1/node_exporter-1.0.1.linux-amd64.tar.gz
+Resolving github.com (github.com)... 140.82.113.4
+Connecting to github.com (github.com)|140.82.113.4|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/9524057/2ae54580-afed-11ea-8b8a-89172cffc39d?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230316%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230316T131847Z&X-Amz-Expires=300&X-Amz-Signature=903f4bc3f5cbf500e0083947c29faa11baff9b168d1a1d92a63f52b90a629690&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=9524057&response-content-disposition=attachment%3B%20filename%3Dnode_exporter-1.0.1.linux-amd64.tar.gz&response-content-type=application%2Foctet-stream [following]
+--2023-03-16 13:18:50--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/9524057/2ae54580-afed-11ea-8b8a-89172cffc39d?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230316%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230316T131847Z&X-Amz-Expires=300&X-Amz-Signature=903f4bc3f5cbf500e0083947c29faa11baff9b168d1a1d92a63f52b90a629690&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=9524057&response-content-disposition=attachment%3B%20filename%3Dnode_exporter-1.0.1.linux-amd64.tar.gz&response-content-type=application%2Foctet-stream
+Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.111.133, 185.199.108.133, 185.199.109.133, ...
+Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.111.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 9520728 (9.1M) [application/octet-stream]
+Saving to: ‘node_exporter-1.0.1.linux-amd64.tar.gz’
+
+node_exporter-1.0.1.linux- 100%[========================================>]   9.08M  --.-KB/s    in 0.08s
+
+2023-03-16 13:18:50 (108 MB/s) - ‘node_exporter-1.0.1.linux-amd64.tar.gz’ saved [9520728/9520728]
+
+ubuntu@ip-172-31-58-163:~$ tar xzf node_exporter-1.0.1.linux-amd64.tar.gz
+ubuntu@ip-172-31-58-163:~$ sudo cp node_exporter-1.0.1.linux-amd64/node_exporter /usr/local/bin/node_exporter
+ubuntu@ip-172-31-58-163:~$ rm -rf node_exporter-1.0.1.linux-amd64.tar.gz node_exporter-1.0.1.linux-amd64
+ubuntu@ip-172-31-58-163:~$ nano /etc/systemd/system/node-exporter.service
+ubuntu@ip-172-31-58-163:~$ sudo nano /etc/systemd/system/node-exporter.service
+ubuntu@ip-172-31-58-163:~$ sudo systemctl daemon-reload
+ubuntu@ip-172-31-58-163:~$ sudo systemctl enable node-exporter
+Created symlink /etc/systemd/system/multi-user.target.wants/node-exporter.service → /etc/systemd/system/node-exporter.service.
+ubuntu@ip-172-31-58-163:~$ sudo systemctl start node-exporter
+ubuntu@ip-172-31-58-163:~$ sudo systemctl status node-exporter
+● node-exporter.service - Prometheus Node Exporter Service
+     Loaded: loaded (/etc/systemd/system/node-exporter.service; enabled; vendor preset: enabled)
+     Active: active (running) since Thu 2023-03-16 13:21:00 UTC; 6s ago
+   Main PID: 1451 (node_exporter)
+      Tasks: 3 (limit: 1143)
+     Memory: 1.7M
+        CPU: 7ms
+     CGroup: /system.slice/node-exporter.service
+             └─1451 /usr/local/bin/node_exporter
+
+Mar 16 13:21:00 ip-172-31-58-163 node_exporter[1451]: level=info ts=2023-03-16T13:21:00.356Z caller=node_ex>Mar 16 13:21:00 ip-172-31-58-163 node_exporter[1451]: level=info ts=2023-03-16T13:21:00.356Z caller=node_ex>Mar 16 13:21:00 ip-172-31-58-163 node_exporter[1451]: level=info ts=2023-03-16T13:21:00.356Z caller=node_ex>Mar 16 13:21:00 ip-172-31-58-163 node_exporter[1451]: level=info ts=2023-03-16T13:21:00.356Z caller=node_ex>ubuntu@ip-172-31-58-163:~$
+
+
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.90.1-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+Last login: Thu Mar 16 16:17:13 EAT 2023 on pts/30
+
+thecarver@TheCarver:~$
+thecarver@TheCarver:~$ cd ssh/
+thecarver@TheCarver:~/ssh$ ssh -i "udacity-project3.pem" ubuntu@ec2-44-204-165-46.compute-1.amazonaws.com
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.0-1028-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu Mar 16 13:33:04 UTC 2023
+
+  System load:  0.0               Processes:             111
+  Usage of /:   38.4% of 7.57GB   Users logged in:       1
+  Memory usage: 30%               IPv4 address for eth0: 172.31.6.144
+  Swap usage:   0%
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+ * Introducing Expanded Security Maintenance for Applications.
+   Receive updates to over 25,000 software packages with your
+   Ubuntu Pro subscription. Free for personal use.
+
+     https://ubuntu.com/aws/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+23 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+*** System restart required ***
+Last login: Thu Mar 16 13:22:08 2023 from 41.90.189.117
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/alertmanager.yml
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/alertmanager.yml
+ubuntu@ip-172-31-6-144:~$ sudo systemctl daemon-reload
+ubuntu@ip-172-31-6-144:~$ sudo systemctl enable alertmanager
+ubuntu@ip-172-31-6-144:~$ sudo systemctl start alertmanager
+ubuntu@ip-172-31-6-144:~$ sudo chown -R prometheus:prometheus /etc/prometheus
+ubuntu@ip-172-31-6-144:~$ sudo systemctl restart prometheus
+ubuntu@ip-172-31-6-144:~$ client_loop: send disconnect: Broken pipe
+thecarver@TheCarver:~/ssh$
+
+
+ubuntu@ip-172-31-6-144:~$ exit
+logout
+Connection to ec2-44-204-165-46.compute-1.amazonaws.com closed.
+thecarver@TheCarver:~/ssh$ ssh -i "udacity-project3.pem" ubuntu@ec2-44-204-165-46.compute-1.amazonaws.com
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.0-1028-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu Mar 16 14:27:22 UTC 2023
+
+  System load:  0.0               Processes:             120
+  Usage of /:   38.4% of 7.57GB   Users logged in:       1
+  Memory usage: 31%               IPv4 address for eth0: 172.31.6.144
+  Swap usage:   0%
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+ * Introducing Expanded Security Maintenance for Applications.
+   Receive updates to over 25,000 software packages with your
+   Ubuntu Pro subscription. Free for personal use.
+
+     https://ubuntu.com/aws/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+23 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+*** System restart required ***
+Last login: Thu Mar 16 14:23:19 2023 from 41.90.189.117
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/prometheus.yml
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/prometheus.yml
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/prometheus.yml
+ubuntu@ip-172-31-6-144:~$ sudo systemctl restart prometheus
+ubuntu@ip-172-31-6-144:~$ sudo systemctl restart prometheus
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/alertmanager.yml
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/alertmanager.yml
+ubuntu@ip-172-31-6-144:~$ client_loop: send disconnect: Broken pipe
+thecarver@TheCarver:~/ssh$
+
+
+
+
+
+
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/alertmanager.yml
+ubuntu@ip-172-31-6-144:~$ cd /etc/prometheus/
+ubuntu@ip-172-31-6-144:/etc/prometheus$ ls
+alertmanager.yml   consoles        prometheus.yml.save    prometheus.yml.save.2
+console_libraries  prometheus.yml  prometheus.yml.save.1  rules.yml
+ubuntu@ip-172-31-6-144:/etc/prometheus$ rm prometheus.yml.save.2
+rm: remove write-protected regular file 'prometheus.yml.save.2'? q
+ubuntu@ip-172-31-6-144:/etc/prometheus$ ls
+alertmanager.yml   consoles        prometheus.yml.save    prometheus.yml.save.2
+console_libraries  prometheus.yml  prometheus.yml.save.1  rules.yml
+ubuntu@ip-172-31-6-144:/etc/prometheus$ rm prometheus.yml.save.2
+rm: remove write-protected regular file 'prometheus.yml.save.2'? y
+rm: cannot remove 'prometheus.yml.save.2': Permission denied
+ubuntu@ip-172-31-6-144:/etc/prometheus$ sudo rm prometheus.yml.save.2
+ubuntu@ip-172-31-6-144:/etc/prometheus$ sudo rm prometheus.yml.save.1
+ubuntu@ip-172-31-6-144:/etc/prometheus$ sudo rm prometheus.yml.save
+ubuntu@ip-172-31-6-144:/etc/prometheus$ ls
+alertmanager.yml  console_libraries  consoles  prometheus.yml  rules.yml
+ubuntu@ip-172-31-6-144:/etc/prometheus$ cd ~
+ubuntu@ip-172-31-6-144:~$ ls
+prometheus-2.41.0.linux-amd64  prometheus-2.41.0.linux-amd64.tar.gz
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/alertmanager.yml
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/alertmanager.yml
+ubuntu@ip-172-31-6-144:~$ sudo systemctl daemon-reload
+ubuntu@ip-172-31-6-144:~$ sudo systemctl enable alertmanager
+ubuntu@ip-172-31-6-144:~$ sudo systemctl start alertmanager
+ubuntu@ip-172-31-6-144:~$ sudo systemctl restart prometheus
+ubuntu@ip-172-31-6-144:~$ sudo systemctl status alertmnager
+Unit alertmnager.service could not be found.
+ubuntu@ip-172-31-6-144:~$ wget https://github.com/prometheus/alertmanager/releases/download/v0.21.0/alertmanager-0.21.0.linux-amd64.tar.gz
+--2023-03-16 15:44:30--  https://github.com/prometheus/alertmanager/releases/download/v0.21.0/alertmanager-0.21.0.linux-amd64.tar.gz
+Resolving github.com (github.com)... 140.82.112.3
+Connecting to github.com (github.com)|140.82.112.3|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/11452538/19587800-b097-11ea-99a2-bb9057dfed21?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230316%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230316T154430Z&X-Amz-Expires=300&X-Amz-Signature=ef943cf17994751f09e7ce823843ad0aa5c317a740c1e2ce1e552c6f2e60ce7c&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=11452538&response-content-disposition=attachment%3B%20filename%3Dalertmanager-0.21.0.linux-amd64.tar.gz&response-content-type=application%2Foctet-stream [following]
+--2023-03-16 15:44:30--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/11452538/19587800-b097-11ea-99a2-bb9057dfed21?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230316%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230316T154430Z&X-Amz-Expires=300&X-Amz-Signature=ef943cf17994751f09e7ce823843ad0aa5c317a740c1e2ce1e552c6f2e60ce7c&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=11452538&response-content-disposition=attachment%3B%20filename%3Dalertmanager-0.21.0.linux-amd64.tar.gz&response-content-type=application%2Foctet-stream
+Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.110.133, 185.199.111.133, 185.199.108.133, ...
+Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.110.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 25710888 (25M) [application/octet-stream]
+Saving to: ‘alertmanager-0.21.0.linux-amd64.tar.gz’
+
+alertmanager-0.21.0.linux- 100%[========================================>]  24.52M   103MB/s    in 0.2s
+
+2023-03-16 15:44:30 (103 MB/s) - ‘alertmanager-0.21.0.linux-amd64.tar.gz’ saved [25710888/25710888]
+
+ubuntu@ip-172-31-6-144:~$ tar xvfz alertmanager-0.21.0.linux-amd64.tar.gz
+alertmanager-0.21.0.linux-amd64/
+alertmanager-0.21.0.linux-amd64/alertmanager
+alertmanager-0.21.0.linux-amd64/amtool
+alertmanager-0.21.0.linux-amd64/NOTICE
+alertmanager-0.21.0.linux-amd64/LICENSE
+alertmanager-0.21.0.linux-amd64/alertmanager.yml
+ubuntu@ip-172-31-6-144:~$ tar xvfz alertmanager-0.21.0.linux-amd64.tar.gz
+alertmanager-0.21.0.linux-amd64/
+alertmanager-0.21.0.linux-amd64/alertmanager
+alertmanager-0.21.0.linux-amd64/amtool
+alertmanager-0.21.0.linux-amd64/NOTICE
+alertmanager-0.21.0.linux-amd64/LICENSE
+alertmanager-0.21.0.linux-amd64/alertmanager.yml
+ubuntu@ip-172-31-6-144:~$ sudo cp alertmanager-0.21.0.linux-amd64/amtool /usr/local/bin/
+ubuntu@ip-172-31-6-144:~$ sudo mkdir /var/lib/alertmanager
+mkdir: cannot create directory ‘/var/lib/alertmanager’: File exists
+ubuntu@ip-172-31-6-144:~$ rm -rf alertmanager*
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/systemd/system/alertmanager.service
+ubuntu@ip-172-31-6-144:~$ sudo systemctl daemon-reload
+ubuntu@ip-172-31-6-144:~$ sudo systemctl enable alertmanager
+ubuntu@ip-172-31-6-144:~$ sudo systemctl start alertmanager
+ubuntu@ip-172-31-6-144:~$ sudo systemctl restart prometheus
+ubuntu@ip-172-31-6-144:~$ sudo systemctl status alertmanager
+● alertmanager.service - Alert Manager
+     Loaded: loaded (/etc/systemd/system/alertmanager.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2023-03-14 02:01:02 UTC; 2 days ago
+   Main PID: 9392 (alertmanager)
+      Tasks: 7 (limit: 1143)
+     Memory: 21.5M
+        CPU: 3min 12.760s
+     CGroup: /system.slice/alertmanager.service
+             └─9392 /usr/local/bin/alertmanager --config.file=/etc/prometheus/alertmanager.yml --storage.pa>
+
+Mar 16 15:16:02 ip-172-31-6-144 alertmanager[9392]: level=info ts=2023-03-16T15:16:02.412Z caller=silence.g>
+Mar 16 15:16:42 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-16T15:16:42.469Z caller=notify.go>
+Mar 16 15:17:38 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-16T15:17:38.863Z caller=notify.go>
+Mar 16 15:18:48 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-16T15:18:48.479Z caller=notify.go>
+ubuntu@ip-172-31-6-144:~$ sudo systemctl status prometheus
+● prometheus.service - Prometheus
+     Loaded: loaded (/etc/systemd/system/prometheus.service; enabled; vendor preset: enabled)
+     Active: active (running) since Thu 2023-03-16 15:46:49 UTC; 44s ago
+   Main PID: 39992 (prometheus)
+      Tasks: 5 (limit: 1143)
+     Memory: 41.3M
+        CPU: 171ms
+     CGroup: /system.slice/prometheus.service
+             └─39992 /usr/local/bin/prometheus --config.file /etc/prometheus/prometheus.yml --storage.tsdb.>
+
+Mar 16 15:46:49 ip-172-31-6-144 prometheus[39992]: ts=2023-03-16T15:46:49.453Z caller=head.go:683 level=inf>
+Mar 16 15:46:49 ip-172-31-6-144 prometheus[39992]: ts=2023-03-16T15:46:49.455Z caller=head.go:683 level=inf>
+Mar 16 15:46:49 ip-172-31-6-144 prometheus[39992]: ts=2023-03-16T15:46:49.455Z caller=head.go:683 level=inf>
+Mar 16 15:46:49 ip-172-31-6-144 prometheus[39992]: ts=2023-03-16T15:46:49.456Z caller=head.go:720 level=inf>
+ubuntu@ip-172-31-6-144:~$ sudo systemctl status node_exporter
+● node_exporter.service - Prometheus Node Exporter Service
+     Loaded: loaded (/etc/systemd/system/node_exporter.service; enabled; vendor preset: enabled)
+     Active: active (running) since Mon 2023-03-13 14:05:55 UTC; 3 days ago
+   Main PID: 3430 (node_exporter)
+      Tasks: 3 (limit: 1143)
+     Memory: 5.7M
+        CPU: 357ms
+     CGroup: /system.slice/node_exporter.service
+             └─3430 /usr/local/bin/node_exporter
+
+Mar 13 14:05:55 ip-172-31-6-144 node_exporter[3430]: ts=2023-03-13T14:05:55.471Z caller=node_exporter.go:11>
+Mar 13 14:05:55 ip-172-31-6-144 node_exporter[3430]: ts=2023-03-13T14:05:55.471Z caller=node_exporter.go:11>
+Mar 13 14:05:55 ip-172-31-6-144 node_exporter[3430]: ts=2023-03-13T14:05:55.471Z caller=node_exporter.go:11>
+Mar 13 14:05:55 ip-172-31-6-144 node_exporter[3430]: ts=2023-03-13T14:05:55.471Z caller=node_exporter.go:11>
+ubuntu@ip-172-31-6-144:~$
+
+
+
+
+
+
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.90.1-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+Last login: Thu Mar 16 19:01:18 EAT 2023 on pts/13
+
+
+
+thecarver@TheCarver:~$
+thecarver@TheCarver:~$
+thecarver@TheCarver:~$
+thecarver@TheCarver:~$ cd ssh/
+thecarver@TheCarver:~/ssh$ ssh -i "udacity-project3.pem" ubuntu@ec2-44-204-165-46.compute-1.amazonaws.com
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.0-1028-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu Mar 16 16:25:39 UTC 2023
+
+  System load:  0.0               Processes:             114
+  Usage of /:   38.3% of 7.57GB   Users logged in:       1
+  Memory usage: 31%               IPv4 address for eth0: 172.31.6.144
+  Swap usage:   0%
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+ * Introducing Expanded Security Maintenance for Applications.
+   Receive updates to over 25,000 software packages with your
+   Ubuntu Pro subscription. Free for personal use.
+
+     https://ubuntu.com/aws/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+23 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+*** System restart required ***
+Last login: Thu Mar 16 16:02:33 2023 from 41.90.189.117
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/alertmanager.yml
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/alertmanager.yml
+ubuntu@ip-172-31-6-144:~$ sudo systemctl restart prometheus
+ubuntu@ip-172-31-6-144:~$ sudo systemctl restart alertmanager.service
+ubuntu@ip-172-31-6-144:~$ sudo systemctl daemon-reload
+ubuntu@ip-172-31-6-144:~$ sudo systemctl start alertmanager
+ubuntu@ip-172-31-6-144:~$ sudo systemctl restart prometheus
+ubuntu@ip-172-31-6-144:~$ client_loop: send disconnect: Broken pipe
+thecarver@TheCarver:~/ssh$
+
+
+
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.90.1-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+Last login: Thu Mar 16 18:29:07 EAT 2023 on pts/2
+thecarver@TheCarver:~$ cd ssh/
+thecarver@TheCarver:~/ssh$ ssh -i "udacity-project3.pem" ubuntu@ec2-44-204-165-46.compute-1.amazonaws.com
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.0-1028-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu Mar 16 16:02:32 UTC 2023
+
+  System load:  0.0               Processes:             111
+  Usage of /:   38.3% of 7.57GB   Users logged in:       1
+  Memory usage: 31%               IPv4 address for eth0: 172.31.6.144
+  Swap usage:   0%
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+ * Introducing Expanded Security Maintenance for Applications.
+   Receive updates to over 25,000 software packages with your
+   Ubuntu Pro subscription. Free for personal use.
+
+     https://ubuntu.com/aws/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+23 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+*** System restart required ***
+Last login: Thu Mar 16 15:31:49 2023 from 41.90.189.117
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/alertmanager.yml
+ubuntu@ip-172-31-6-144:~$ sudo systemctl restart prometheus
+ubuntu@ip-172-31-6-144:~$ sudo systemctl status alertmnager
+Unit alertmnager.service could not be found.
+ubuntu@ip-172-31-6-144:~$ sudo systemctl status alertmanager
+● alertmanager.service - Alert Manager
+     Loaded: loaded (/etc/systemd/system/alertmanager.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2023-03-14 02:01:02 UTC; 2 days ago
+   Main PID: 9392 (alertmanager)
+      Tasks: 7 (limit: 1143)
+     Memory: 21.6M
+        CPU: 3min 13.717s
+     CGroup: /system.slice/alertmanager.service
+             └─9392 /usr/local/bin/alertmanager --config.file=/etc/prometheus/alertmanager.yml --storage.pa>
+
+Mar 16 16:03:46 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-16T16:03:46.599Z caller=notify.go>
+Mar 16 16:03:47 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-16T16:03:47.757Z caller=notify.go>
+Mar 16 16:03:50 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-16T16:03:50.446Z caller=notify.go>
+Mar 16 16:03:53 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-16T16:03:53.938Z caller=notify.go>
+ubuntu@ip-172-31-6-144:~$ client_loop: send disconnect: Broken pipe
+thecarver@TheCarver:~/ssh$
+
+
+
+
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/alertmanager.yml
+ubuntu@ip-172-31-6-144:~$ cd /etc/prometheus/
+ubuntu@ip-172-31-6-144:/etc/prometheus$ ls
+alertmanager.yml   consoles        prometheus.yml.save    prometheus.yml.save.2
+console_libraries  prometheus.yml  prometheus.yml.save.1  rules.yml
+ubuntu@ip-172-31-6-144:/etc/prometheus$ rm prometheus.yml.save.2
+rm: remove write-protected regular file 'prometheus.yml.save.2'? q
+ubuntu@ip-172-31-6-144:/etc/prometheus$ ls
+alertmanager.yml   consoles        prometheus.yml.save    prometheus.yml.save.2
+console_libraries  prometheus.yml  prometheus.yml.save.1  rules.yml
+ubuntu@ip-172-31-6-144:/etc/prometheus$ rm prometheus.yml.save.2
+rm: remove write-protected regular file 'prometheus.yml.save.2'? y
+rm: cannot remove 'prometheus.yml.save.2': Permission denied
+ubuntu@ip-172-31-6-144:/etc/prometheus$ sudo rm prometheus.yml.save.2
+ubuntu@ip-172-31-6-144:/etc/prometheus$ sudo rm prometheus.yml.save.1
+ubuntu@ip-172-31-6-144:/etc/prometheus$ sudo rm prometheus.yml.save
+ubuntu@ip-172-31-6-144:/etc/prometheus$ ls
+alertmanager.yml  console_libraries  consoles  prometheus.yml  rules.yml
+ubuntu@ip-172-31-6-144:/etc/prometheus$ cd ~
+ubuntu@ip-172-31-6-144:~$ ls
+prometheus-2.41.0.linux-amd64  prometheus-2.41.0.linux-amd64.tar.gz
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/alertmanager.yml
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/alertmanager.yml
+ubuntu@ip-172-31-6-144:~$ sudo systemctl daemon-reload
+ubuntu@ip-172-31-6-144:~$ sudo systemctl enable alertmanager
+ubuntu@ip-172-31-6-144:~$ sudo systemctl start alertmanager
+ubuntu@ip-172-31-6-144:~$ sudo systemctl restart prometheus
+ubuntu@ip-172-31-6-144:~$ sudo systemctl status alertmnager
+Unit alertmnager.service could not be found.
+ubuntu@ip-172-31-6-144:~$ wget https://github.com/prometheus/alertmanager/releases/download/v0.21.0/alertmanager-0.21.0.linux-amd64.tar.gz
+--2023-03-16 15:44:30--  https://github.com/prometheus/alertmanager/releases/download/v0.21.0/alertmanager-0.21.0.linux-amd64.tar.gz
+Resolving github.com (github.com)... 140.82.112.3
+Connecting to github.com (github.com)|140.82.112.3|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/11452538/19587800-b097-11ea-99a2-bb9057dfed21?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230316%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230316T154430Z&X-Amz-Expires=300&X-Amz-Signature=ef943cf17994751f09e7ce823843ad0aa5c317a740c1e2ce1e552c6f2e60ce7c&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=11452538&response-content-disposition=attachment%3B%20filename%3Dalertmanager-0.21.0.linux-amd64.tar.gz&response-content-type=application%2Foctet-stream [following]
+--2023-03-16 15:44:30--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/11452538/19587800-b097-11ea-99a2-bb9057dfed21?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20230316%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230316T154430Z&X-Amz-Expires=300&X-Amz-Signature=ef943cf17994751f09e7ce823843ad0aa5c317a740c1e2ce1e552c6f2e60ce7c&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=11452538&response-content-disposition=attachment%3B%20filename%3Dalertmanager-0.21.0.linux-amd64.tar.gz&response-content-type=application%2Foctet-stream
+Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.110.133, 185.199.111.133, 185.199.108.133, ...
+Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.110.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 25710888 (25M) [application/octet-stream]
+Saving to: ‘alertmanager-0.21.0.linux-amd64.tar.gz’
+
+alertmanager-0.21.0.linux- 100%[========================================>]  24.52M   103MB/s    in 0.2s
+
+2023-03-16 15:44:30 (103 MB/s) - ‘alertmanager-0.21.0.linux-amd64.tar.gz’ saved [25710888/25710888]
+
+ubuntu@ip-172-31-6-144:~$ tar xvfz alertmanager-0.21.0.linux-amd64.tar.gz
+alertmanager-0.21.0.linux-amd64/
+alertmanager-0.21.0.linux-amd64/alertmanager
+alertmanager-0.21.0.linux-amd64/amtool
+alertmanager-0.21.0.linux-amd64/NOTICE
+alertmanager-0.21.0.linux-amd64/LICENSE
+alertmanager-0.21.0.linux-amd64/alertmanager.yml
+ubuntu@ip-172-31-6-144:~$ tar xvfz alertmanager-0.21.0.linux-amd64.tar.gz
+alertmanager-0.21.0.linux-amd64/
+alertmanager-0.21.0.linux-amd64/alertmanager
+alertmanager-0.21.0.linux-amd64/amtool
+alertmanager-0.21.0.linux-amd64/NOTICE
+alertmanager-0.21.0.linux-amd64/LICENSE
+alertmanager-0.21.0.linux-amd64/alertmanager.yml
+ubuntu@ip-172-31-6-144:~$ sudo cp alertmanager-0.21.0.linux-amd64/amtool /usr/local/bin/
+ubuntu@ip-172-31-6-144:~$ sudo mkdir /var/lib/alertmanager
+mkdir: cannot create directory ‘/var/lib/alertmanager’: File exists
+ubuntu@ip-172-31-6-144:~$ rm -rf alertmanager*
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/systemd/system/alertmanager.service
+ubuntu@ip-172-31-6-144:~$ sudo systemctl daemon-reload
+ubuntu@ip-172-31-6-144:~$ sudo systemctl enable alertmanager
+ubuntu@ip-172-31-6-144:~$ sudo systemctl start alertmanager
+ubuntu@ip-172-31-6-144:~$ sudo systemctl restart prometheus
+ubuntu@ip-172-31-6-144:~$ sudo systemctl status alertmanager
+● alertmanager.service - Alert Manager
+     Loaded: loaded (/etc/systemd/system/alertmanager.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2023-03-14 02:01:02 UTC; 2 days ago
+   Main PID: 9392 (alertmanager)
+      Tasks: 7 (limit: 1143)
+     Memory: 21.5M
+        CPU: 3min 12.760s
+     CGroup: /system.slice/alertmanager.service
+             └─9392 /usr/local/bin/alertmanager --config.file=/etc/prometheus/alertmanager.yml --storage.pa>
+
+Mar 16 15:16:02 ip-172-31-6-144 alertmanager[9392]: level=info ts=2023-03-16T15:16:02.412Z caller=silence.g>
+Mar 16 15:16:42 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-16T15:16:42.469Z caller=notify.go>
+Mar 16 15:17:38 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-16T15:17:38.863Z caller=notify.go>
+Mar 16 15:18:48 ip-172-31-6-144 alertmanager[9392]: level=warn ts=2023-03-16T15:18:48.479Z caller=notify.go>
+ubuntu@ip-172-31-6-144:~$ sudo systemctl status prometheus
+● prometheus.service - Prometheus
+     Loaded: loaded (/etc/systemd/system/prometheus.service; enabled; vendor preset: enabled)
+     Active: active (running) since Thu 2023-03-16 15:46:49 UTC; 44s ago
+   Main PID: 39992 (prometheus)
+      Tasks: 5 (limit: 1143)
+     Memory: 41.3M
+        CPU: 171ms
+     CGroup: /system.slice/prometheus.service
+             └─39992 /usr/local/bin/prometheus --config.file /etc/prometheus/prometheus.yml --storage.tsdb.>
+
+Mar 16 15:46:49 ip-172-31-6-144 prometheus[39992]: ts=2023-03-16T15:46:49.453Z caller=head.go:683 level=inf>
+Mar 16 15:46:49 ip-172-31-6-144 prometheus[39992]: ts=2023-03-16T15:46:49.455Z caller=head.go:683 level=inf>
+Mar 16 15:46:49 ip-172-31-6-144 prometheus[39992]: ts=2023-03-16T15:46:49.455Z caller=head.go:683 level=inf>
+Mar 16 15:46:49 ip-172-31-6-144 prometheus[39992]: ts=2023-03-16T15:46:49.456Z caller=head.go:720 level=inf>
+ubuntu@ip-172-31-6-144:~$ sudo systemctl status node_exporter
+● node_exporter.service - Prometheus Node Exporter Service
+     Loaded: loaded (/etc/systemd/system/node_exporter.service; enabled; vendor preset: enabled)
+     Active: active (running) since Mon 2023-03-13 14:05:55 UTC; 3 days ago
+   Main PID: 3430 (node_exporter)
+      Tasks: 3 (limit: 1143)
+     Memory: 5.7M
+        CPU: 357ms
+     CGroup: /system.slice/node_exporter.service
+             └─3430 /usr/local/bin/node_exporter
+
+Mar 13 14:05:55 ip-172-31-6-144 node_exporter[3430]: ts=2023-03-13T14:05:55.471Z caller=node_exporter.go:11>
+Mar 13 14:05:55 ip-172-31-6-144 node_exporter[3430]: ts=2023-03-13T14:05:55.471Z caller=node_exporter.go:11>
+Mar 13 14:05:55 ip-172-31-6-144 node_exporter[3430]: ts=2023-03-13T14:05:55.471Z caller=node_exporter.go:11>
+Mar 13 14:05:55 ip-172-31-6-144 node_exporter[3430]: ts=2023-03-13T14:05:55.471Z caller=node_exporter.go:11>
+ubuntu@ip-172-31-6-144:~$ client_loop: send disconnect: Broken pipe
+thecarver@TheCarver:~/ssh$
+
+
+ubuntu@ip-172-31-6-144:~$ exit
+logout
+Connection to ec2-44-204-165-46.compute-1.amazonaws.com closed.
+thecarver@TheCarver:~/ssh$ ssh -i "udacity-project3.pem" ubuntu@ec2-44-204-165-46.compute-1.amazonaws.com
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.0-1028-aws x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Thu Mar 16 14:27:22 UTC 2023
+
+  System load:  0.0               Processes:             120
+  Usage of /:   38.4% of 7.57GB   Users logged in:       1
+  Memory usage: 31%               IPv4 address for eth0: 172.31.6.144
+  Swap usage:   0%
+
+ * Ubuntu Pro delivers the most comprehensive open source security and
+   compliance features.
+
+   https://ubuntu.com/aws/pro
+
+ * Introducing Expanded Security Maintenance for Applications.
+   Receive updates to over 25,000 software packages with your
+   Ubuntu Pro subscription. Free for personal use.
+
+     https://ubuntu.com/aws/pro
+
+Expanded Security Maintenance for Applications is not enabled.
+
+23 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+*** System restart required ***
+Last login: Thu Mar 16 14:23:19 2023 from 41.90.189.117
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/prometheus.yml
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/prometheus.yml
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/prometheus.yml
+ubuntu@ip-172-31-6-144:~$ sudo systemctl restart prometheus
+ubuntu@ip-172-31-6-144:~$ sudo systemctl restart prometheus
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/alertmanager.yml
+ubuntu@ip-172-31-6-144:~$ sudo nano /etc/prometheus/alertmanager.yml
+ubuntu@ip-172-31-6-144:~$ client_loop: send disconnect: Broken pipe
+thecarver@TheCarver:~/ssh$

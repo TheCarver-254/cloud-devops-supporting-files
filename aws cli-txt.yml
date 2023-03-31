@@ -1,0 +1,18 @@
+#configure aws cli
+create iam user (in this case add AdministratorAccess permissions)
+on the user create access keys for aws cli
+
+thecarver23
+Access key
+xxxx
+
+Secret access key
+xxxx
+
+#run aws configure on terminal
+aws configure
+# region = us-west-2 (for our case)
+
+#get public ip of all your ec2 instances
+aws ec2 describe-instances --query=Reservations[].Instances[].PublicIpAddress --region us-east-1
+#aws ec2 describe-instances --instance-ids i-0d0d377b6167567a4 --query=Reservations[].Instances[].PublicIpAddress --region us-east-2

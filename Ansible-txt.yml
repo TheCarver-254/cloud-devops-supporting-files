@@ -1,0 +1,8 @@
+#install ansible
+pip install --user ansible
+
+#ssh to a linux server on AWS
+cd 
+chmod 400 ansible1.pem
+#ssh -i file.pem username@ip-address
+ssh -i "ansible1.pem" ec2-user@ec2-44-202-243-227.compute-1.amazonaws.com

@@ -1,0 +1,76 @@
+pip install virtualenv
+
+python3 -m venv ~/.myvenv
+source ~/.myvenv/bin/activate
+or
+source .myvenv/bin/activate
+
+#from udacity
+python3 -m venv ~/.devops
+source ~/.devops/bin/activate
+
+# deactivate
+ ~ deactivate
+
+ #setup the env
+ pip install pylint
+ pip install black
+ pip install pytest
+ pip install ipython
+
+
+
+#remove directory
+sudo rm -r mydirname
+
+
+#aws cloud9 setup
+#generate ssh key
+ssh-keygen -t rsa
+
+#output the ssh key
+cat /home/ec2-user/.ssh/id_rsa.pub
+
+#set the ssh key in github
+create the repo
+on github, go to settings
+SSH amd GPG keys
+clone the repo via ssh
+
+
+
+#gitproj repo setup
+touch Makefile
+touch requirements.txt
+touch Dockerfile
+touch app.py
+
+
+#git setup
+git config --global user.name "Micah Acosta"
+
+git config --global user.email "micahacosta51@gmail.com"
+
+
+
+
+#install flask
+> mkdir myproject
+> cd myproject
+> py -3 -m venv venv
+
+> venv\Scripts\activate
+
+$ pip install Flask
+
+#delete docker images
+https://linuxhint.com/removing_docker_images/
+https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes
+https://www.freecodecamp.org/news/how-to-remove-images-in-docker/#:~:text=To%20remove%20the%20image%2C%20you,your%2Dimage%2Did%3E%20.
+
+
+#Noah Gift
+https://github.com/noahgift
+
+#Flask tutorial
+https://flask.palletsprojects.com/en/2.2.x/tutorial/

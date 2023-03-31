@@ -1,0 +1,10 @@
+#wsl
+#powershell as cmd
+wsl --install
+
+
+#vs codium
+winget install vscodium
+
+#2023 win11 devops directory
+/mnt/c/Users/micah/2023DevOps_win

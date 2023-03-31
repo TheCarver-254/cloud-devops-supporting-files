@@ -1,0 +1,9 @@
+#Remove Directory in Linux: How to Delete Files and Folders
+link: https://www.hostinger.com/tutorials/how-to-remove-files-and-folders-using-linux-command-line/#:~:text=To%20delete%20a%20directory%20without,%2C%20use%20the%20%2Drf%20option.&text=The%20rm%20command%20also%20works%20for%20removing%20empty%20directories%20in%20Linux.
+    #example: 
+    rm -rf Simple-Directory
+
+
+#install minikube
+#: incomplete
+link: https://www.google.com/search?q=install+minikube+on+wsl2&oq=install+minikube+&aqs=chrome.8.69i57j0i512j0i20i263i512j0i512l7.11253j0j7&sourceid=chrome&ie=UTF-8

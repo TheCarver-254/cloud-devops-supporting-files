@@ -1,0 +1,12 @@
+#path - cloud9
+/home/ec2-user/environment/project4/DevOps_Microservices/project-ml-microservice-kubernetes
+
+#python3 venv
+source ~/.devopsproj4/bin/activate
+
+#clear
+clear
+
+
+#path -wsl
+/home/thecarver/2023DevOps/GIT/DevOps_Microservices/project-ml-microservice-kubernetes
