@@ -12,11 +12,7 @@ eksctl create cluster --name eksctl-demo --region=us-east-2 [--profile EKSCluste
 
 
 https://docs.aws.amazon.com/powershell/latest/userguide/pstools-appendix-sign-up.html
-Access key
-AKIAQ3WOFIRUNL2MA263
 
-Secret access key
-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
 
 
 #31/03

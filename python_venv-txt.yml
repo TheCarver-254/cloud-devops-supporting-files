@@ -30,6 +30,7 @@ ssh-keygen -t rsa
 
 #output the ssh key
 cat /home/ec2-user/.ssh/id_rsa.pub
+cat /c/Users/micah/.ssh/id_rsa.pub #in windows git-bash
 
 #set the ssh key in github
 create the repo
