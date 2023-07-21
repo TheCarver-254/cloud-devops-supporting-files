@@ -56,3 +56,9 @@ sudo apt-add-repository ppa:ansible/ansible
 sudo apt update
 sudo apt install ansible
 
+
+#running ansible trials
+ansible-playbook -i inventory playbook-01.yml -u sammy
+ansible-playbook -i inventory main.yml
+ansible all -i inventory -m ping -u ubuntu
+
