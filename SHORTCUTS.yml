@@ -3,14 +3,47 @@ sudo useradd -m  thecarver
 sudo passwd thecarver
 su -l thecarver #sign in with the new user
 
+#Add a user to the Sudo Group in the Sudoers File
+#https://linuxhint.com/centos/
+sudo usermod -aG sudo newuser
+groups newuser #verify https://phoenixnap.com/kb/how-to-create-sudo-user-on-ubuntu
+
 #git config
 git config --global user.email "micahacosta51@gmail.com"
 git config --global user.name "TheCarver"
 
 
 
-#clone a github repo using ssh
+#clone a github repo using ssh   #note: for github, leave below abve as default
+#https://stackoverflow.com/questions/2643502/git-how-to-solve-permission-denied-publickey-error-when-using-git
 cd ~/.ssh && ssh-keygen
 #Your identification has been saved in /home/thecarver/.ssh/id_rsa
 #Your public key has been saved in /home/thecarver/.ssh/id_rsa.pub
 cat id_rsa.pub #then paste the output to github ssh & gpg keys section
+
+
+#copy the pem file from windows to wsl
+cp /mnt/c/Users/micah/Downloads/udacity-prometheus.pem  /home/thecarver/2023DevOps/SSH
+
+
+#upgrading linux
+sudo apt update
+sudo apt upgrade # 20 packages can be upgraded
+sudo apt dist-upgrade # not mandatory
+
+#installing python3
+#frst validate if python3 is installed
+ls /usr/bin/python* 
+which python python2 python3
+
+sudo apt update
+sudo apt install python3 -y
+
+#Installing pip for Python 3
+sudo apt update
+sudo apt install python3-pip  #apt-get install python3-pip
+pip3 --version #validate
+
+
+#error : sudo: apt-add-repository: command not found
+
