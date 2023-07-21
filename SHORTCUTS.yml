@@ -45,5 +45,14 @@ sudo apt install python3-pip  #apt-get install python3-pip
 pip3 --version #validate
 
 
-#error : sudo: apt-add-repository: command not found
+#error : sudo: apt-add-repository: command not found -- issue not in Ubuntu , only in Debian Parrot
+#error: Error code: Wsl/Service/CreateInstance/MountVhd/ERROR_FILE_NOT_FOUND
+#https://superuser.com/questions/1758361/error-code-wsl-service-createinstance-mountvhd-error-file-not-found
+wsl -l
+wsl --unregister Ubuntu
+
+#installing & configuring ansible
+sudo apt-add-repository ppa:ansible/ansible
+sudo apt update
+sudo apt install ansible
 
