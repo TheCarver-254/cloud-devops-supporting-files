@@ -62,3 +62,26 @@ ansible-playbook -i inventory playbook-01.yml -u sammy
 ansible-playbook -i inventory main.yml
 ansible all -i inventory -m ping -u ubuntu
 
+
+#22/07/23
+#install aws cli
+sudo apt install awscli
+
+#Script to Query EC2 for Instances and Output to File
+aws ec2 describe-instances \
+   --query 'Reservations[*].Instances[*].PublicIpAddress' \
+   --output text >> inventory
+
+
+#running an ansible playbook
+# Assuming the udacity.pem and inventory files are present in the current directory
+ansible-playbook main-remote.yml -i inventory --private-key udacity-webserver.pem
+
+
+#ssh to an aws linux server
+#Run this command, if necessary, to ensure your key is not publicly viewable.
+chmod 400 udacity-webserver.pem
+
+#Connect to your instance using its Public DNS:
+#Example:
+ ssh -i "udacity-webserver.pem" ubuntu@ec2-3-95-208-234.compute-1.amazonaws.com
