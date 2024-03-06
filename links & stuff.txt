@@ -26,3 +26,9 @@ https://stackoverflow.com/questions/61841136/what-is-the-cause-of-the-security-c
 
 azure devops
 https://azure.microsoft.com/en-us/blog/introducing-azure-devops/
+
+
+
+2024DevOps
+Create AWS Secret Keys & Access Keys
+https://medium.com/@jannden/how-to-get-aws-access-keys-81cad0366418
