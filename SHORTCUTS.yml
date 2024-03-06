@@ -62,3 +62,105 @@ ansible-playbook -i inventory playbook-01.yml -u sammy
 ansible-playbook -i inventory main.yml
 ansible all -i inventory -m ping -u ubuntu
 
+
+#22/07/23
+#install aws cli
+sudo apt install awscli
+
+#Script to Query EC2 for Instances and Output to File
+aws ec2 describe-instances \
+   --query 'Reservations[*].Instances[*].PublicIpAddress' \
+   --output text >> inventory
+
+
+#running an ansible playbook
+# Assuming the udacity.pem and inventory files are present in the current directory
+ansible-playbook main-remote.yml -i inventory --private-key udacity-webserver.pem
+
+
+#ssh to an aws linux server
+#Run this command, if necessary, to ensure your key is not publicly viewable.
+chmod 400 udacity-webserver.pem
+
+#Connect to your instance using its Public DNS:
+#Example:
+ ssh -i "udacity-webserver.pem" ubuntu@ec2-3-95-208-234.compute-1.amazonaws.com
+
+ #error 
+ sudo: a password is required\n",
+
+
+
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint:   git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint:   git branch -m <name>
+
+
+#working with git ignore
+#https://www.freecodecamp.org/news/gitignore-file-how-to-ignore-files-and-folders-in-git/
+
+
+#ERROR - an error occurred (invalidclienttokenid) when calling DescribeStacks operation aws cloudformation
+#https://stackoverflow.com/questions/34582318/how-can-i-resolve-the-error-the-security-token-included-in-the-request-is-inval
+#https://repost.aws/knowledge-center/authenticate-mfa-cli
+#solution   - since my udacity aws account uses AWS_SESSION_TOKEN, i had to add aws_session_token inside ~/.aws/credentials
+cd ~/.aws/credentials
+aws_session_token="udacity session token value"
+
+#when faced the error in circleci, i added AWS_SESSION_TOKEN under environment variables for the project
+
+#then create the cloudformation stack
+aws cloudformation deploy   --template-file template.yml   --stack-name test1   --region us-east-1
+
+#or 
+aws cloudformation deploy \
+  --template-file template.yml \
+  --stack-name test1
+  --region us-east-1
+
+
+#deleting a stack
+#https://docs.aws.amazon.com/cli/latest/reference/cloudformation/list-stacks.html
+aws cloudformation delete-stack --stack-name myteststack   myStack-01989
+
+#To list AWS CloudFormation stacks
+aws cloudformation list-stacks
+
+#To list AWS CloudFormation stacks |  CREATE_COMPLETE
+aws cloudformation list-stacks --stack-status-filter CREATE_COMPLETE
+
+#To list AWS CloudFormation stacks |  DELETE_COMPLETE
+aws cloudformation list-stacks --stack-status-filter DELETE_COMPLETE
+
+#get summary results
+aws cloudformation list-stacks  --query "StackSummaries[*].{StackId: StackId, StackName: StackName}"
+
+aws cloudformation list-stacks  --query "StackSummaries[*].{StackId: StackId, StackName: StackName, StackStatus: StackStatus}"
+
+aws cloudformation list-stacks --stack-status-filter CREATE_COMPLETE  --query "StackSummaries[*].{StackId: StackId, StackName: StackName, StackStatus: StackStatus}"
+
+
+
+#july 24th
+#circleci AWS environemnt vairables
+AWS_ACCESS_KEY_ID
+AWS_DEFAULT_REGION
+AWS_SECRET_ACCESS_KEY
+AWS_SESSION_TOKEN #when there is MFA
+
+
+
+#error: fixing SSH Error: Permission denied (publickey,password) in Ansible
+#https://stackoverflow.com/questions/33280244/ssh-error-permission-denied-publickey-password-in-ansible
+#step 1: test server/servers if online thru ping
+#web is the group of servers with ips
+ansible web -m ping -i inventory --private-key udacity-webserver.pem 
+
+#step 2: update circle ci SSH and the environment variables

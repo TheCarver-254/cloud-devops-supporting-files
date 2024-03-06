@@ -97,43 +97,20 @@ git push origin master
 
 
 
+#22/07
+#…or create a new repository on the command line
 
-…or create a new repository on the command line
-echo "# cloud-devops-supporting-files" >> README.md
+#echo "# cloud-devops-supporting-files" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
 git branch -M main
 git remote add origin git@github.com:TheCarver-254/cloud-devops-supporting-files.git
 git push -u origin main
-…or push an existing repository from the command line
+
+#…or push an existing repository from the command line
 git remote add origin git@github.com:TheCarver-254/cloud-devops-supporting-files.git
 git branch -M main
 git push -u origin main
 …or import code from another repository
 You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
-
-
-
-
-#2024DevOps
-#working with .gitignore
-https://git-scm.com/docs/gitignore
-The pattern hello.* matches any file or directory whose name begins with hello.. 
-If one wants to restrict this only to the directory and not in its subdirectories, 
-one can prepend the pattern with a slash, i.e. /hello.*; the pattern now matches hello.txt, hello.c but not a/hello.java.
-
-The pattern foo/ will match a directory foo and paths underneath it, 
-but will not match a regular file or a symbolic link foo (this is consistent with the way how pathspec works 
-in general in Git)
-
-The pattern doc/frotz and /doc/frotz have the same effect in any .gitignore file. 
-In other words, a leading slash is not relevant if there is already a middle slash in the pattern.
-
-The pattern foo/*, matches foo/test.json (a regular file), foo/bar (a directory), 
-but it does not match foo/bar/hello.c (a regular file), as the asterisk in the pattern does not match bar/hello.c
- which has a slash in it.
-
-.gitignore
-.terraform*
-terraform*
